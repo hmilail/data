@@ -1,111 +1,588 @@
 ```
-When it comes to designing the ceiling of a double-volume house, you have several options to consider
+Add custom native code
 ```
 
 ```
-The choice depends on your personal style, the overall theme of your home, and the atmosphere you wish to create
+Learn how to add custom native code to your Expo project.
 ```
 
 ```
-Here are some ideas:
+The Expo Go app is a great tool to get started --
 ```
 
 ```
-1
+it exists to help developers quickly get projects off the ground, experiment with ideas (such as on Snack) and share their work with minimal friction.
 ```
 
 ```
-Chandeliers or Pendant Lights: Install a stunning chandelier or a series of pendant lights to add elegance and drama to the space
+Expo Go makes this possible by including a feature-rich native runtime made up of every module in the Expo SDK, so all you need to do to use a module is install the package and reload your app.
 ```
 
 ```
-This can be particularly effective if you have a grand staircase or a central focal point that draws the eye upward.
+The tradeoff is that Expo Go does not allow you to add custom native code, you can only use native modules built into the Expo SDK.
 ```
 
 ```
-2
+There are many great libraries available outside of the Expo SDK, and you may even want to build your own native library.
 ```
 
 ```
-Exposed Beams: If you prefer a rustic or industrial look, consider leaving the ceiling beams exposed
+You can leverage these libraries with development builds, or by using prebuild to generate the native projects, or both.
 ```
 
 ```
-Exposed wooden beams can add warmth and character to the space
+You can also continue using EAS Build to release your app, no changes are required.
 ```
 
 ```
-You can choose natural wood tones or paint them to match your interior color scheme.
+Adding custom native code with development builds
 ```
 
 ```
-3
+To make use of third-party libraries with custom native code and continue with the same developer experience of Expo Go, you can migrate to using development builds.
 ```
 
 ```
-Skylights: Bring in natural light and create a sense of openness by installing skylights in the ceiling
+Development builds are like your own personal version of Expo Go --
 ```
 
 ```
-This will not only brighten up the space but also offer a view of the sky during the day and the stars at night.
+they include the native runtime that powers your app, and you control what is included in that native runtime by adding or removing packages in your
+
+package dot json.
 ```
 
 ```
-4
+Development builds allow you to continue to build your app in JavaScript while taking advantage of the full ecosystem of native packages available for Expo and React Native projects.
 ```
 
 ```
-Artistic Ceiling Design: Consider hiring a skilled artist or designer to create a custom ceiling mural or artwork
+Learn how to start using custom native code in your app by switching from Expo Go to development builds in the Getting Started guide for development builds.
 ```
 
 ```
-This can be a beautiful and unique feature that reflects your personal taste and adds a touch of creativity to the space.
+Generate native projects with prebuild
 ```
 
 ```
-5
+If you would like to move from a JavaScript based project and take ownership over the iOS and Android native projects,
 ```
 
 ```
-Stretch Fabric: Stretch fabric ceiling installations are gaining popularity
+you can generate them by running
+
+npx
+
+space
+
+expo
+
+space
+
+prebuild,
 ```
 
 ```
-They can create a smooth, seamless appearance and allow for unique lighting effects
+or
+
+npx
+
+space
+
+expo
+
+space
+
+run
+
+colon
+
+opening bracket
+
+ios
+
+vertical line
+
+android
+
+closing bracker
 ```
 
 ```
-The fabric can be backlit to create a soft, diffused glow or to mimic the appearance of a starry sky.
+(which will run
+
+prebuild
+
+automatically).
 ```
 
 ```
-6
+You can also use development builds in this context --
 ```
 
 ```
-Architectural Details: Incorporate architectural details such as coffered ceilings, tray ceilings, or vaulted ceilings
+the easiest way to do this is to run
+
+npx
+
+space
+
+expo
+
+space
+
+install
+
+space
+
+expo
+
+dash
+
+D.E.V.
+
+dash
+
+client
 ```
 
 ```
-These features add depth and visual interest to the space while also providing an opportunity for creative lighting options.
+before
+
+prebuild
+
+or
+
+run
+
+and it's also possible to add the library at any later time.
 ```
 
 ```
-7
+Terminal
+
+Copy
+
+hash space Build your native Android project
+
+new line
 ```
 
 ```
-Acoustic Panels: If you want to enhance the sound quality within the space, consider installing acoustic panels on the ceiling
+dash
+
+space
+
+N.P.X.
+
+space
+
+expo
+
+space
+
+run
+
+colon
+
+android
+
+new line
+
+new line
 ```
 
 ```
-These panels help reduce echo and improve acoustics, making the room more pleasant for activities like listening to music or watching movies.
+hash space Build your native I.O.S. project
+new line
 ```
 
 ```
-Remember, it's important to consider the overall style and theme of your home and how the ceiling design will complement the rest of the space
+hash
+
+space
+
+N.P.X.
+
+expo
+
+run
+
+colon
+
+I.O.S.
 ```
 
 ```
-You may also want to consult with an interior designer or architect who can provide personalized recommendations based on your specific requirements and preferences.
+N.P.X.
+
+space
+
+expo
+
+space
+
+run
+
+colon
+
+android
+
+requires Android Studio SDK to be installed. See the setup environment guide.
+```
+
+```
+N.P.X.
+
+space
+
+expo
+
+space
+
+run
+
+colon
+
+I.O.S.
+
+requires XCode (macOS only) installed on your computer. See the setup environment guide.
+```
+
+```
+Using the run commands will initially prebuild your project to generate all of the native code within your project directory.
+```
+
+```
+If you manually modify the android or ios directory,
+```
+
+```
+you won't be able to safely re-run
+N.P.X.
+space
+expo
+space
+prebuild,
+this is known as the bare workflow.
+```
+
+```
+Your app can still run in Expo Go, however, any custom native code won't be accessible if it's not already present in the Expo Go app.
+```
+
+```
+If you install a package with an Expo
+
+config plugin,
+
+you'll need to add the plugin to the
+
+plugins
+
+array in the project's
+
+app dot json,
+```
+
+```
+then re-run
+
+N.P.X.
+
+space
+
+expo
+
+space
+
+prebuild
+
+to sync the changes before rebuilding the native app.
+```
+
+```
+Often this does things like adding required permissions to the
+
+android manifest dot X.M.L.
+
+or
+
+info dot P. list.
+```
+
+```
+You may need to run
+
+npx
+
+space
+
+expo
+
+space
+
+prebuild
+
+space
+
+dash
+
+dash
+
+clean
+
+depending on how complex the plugin is; this will delete and re-generate the native project files from scratch.
+```
+
+```
+Manually changing the native project files
+```
+
+```
+If you've made manual modifications to your
+
+android
+
+or
+
+ios
+
+directory,
+```
+
+```
+you'll need to manually setup new packages because running
+
+npx
+
+space
+
+expo
+
+space
+
+prebuild
+```
+
+```
+may not work as expected with an unpredictable project state (think of this like running
+
+yarn
+
+after manually modifying your
+
+node underscore modules
+
+directory).
+```
+
+```
+If you want to make static changes to your native project files like the iOS
+
+android manifest dot X.M.L.
+
+or
+
+info dot P. list
+
+and still have access to prebuilding, check out the config plugins guide to see how you can hook into the prebuild process to make those changes.
+```
+
+```
+Reverting changes from
+
+npx
+
+space
+
+expo
+
+space
+
+run
+
+colon
+
+opening bracket
+
+android
+
+vertical line
+
+ios
+
+closing bracket
+```
+
+```
+If you've decided that you want to roll your app back to being fully managed (no iOS and Android projects in your project directory),
+```
+
+```
+you can check out your most recent commit before executing
+```
+
+```
+npx
+
+space
+
+expo
+
+space
+
+run
+
+colon
+
+opening bracket
+
+android
+
+vertical line
+
+ios
+
+closing bracket,
+
+then run
+
+N.P.M.
+
+install
+
+again to restore the state of your
+
+node underscore modules
+
+directory.
+```
+
+```
+Developing apps with custom native code
+```
+
+```
+Once you have customized the native code in your project, you can use the
+
+expo
+
+dash
+
+D.E.V.
+
+dash
+
+client
+
+package to create a development build and retain the convenience of working with just JavaScript and/or TypeScript in Expo Go.
+```
+
+```
+You can create a development build for your managed or bare workflow.
+```
+
+```
+Releasing apps with custom native code to production
+```
+
+```
+When you're ready to ship your app, you can build it with EAS Build the same as you were building it before adding custom native code.
+```
+
+```
+Alternatively, you can archive and sign it locally. Unsurprisingly, we recommend EAS Build!
+```
+
+```
+Terminal
+
+Copy
+```
+
+```
+hash
+
+space
+
+Install the C.L.I.
+
+new line
+```
+
+```
+hash
+
+space
+
+N.P.M.
+
+i
+
+dash
+
+G.
+
+space
+
+E.A.S.
+
+dash
+
+C.L.I.
+
+new line
+
+new line
+```
+
+```
+hash
+
+space
+
+Build your app!
+
+new line
+```
+
+```
+hash
+
+space
+
+E.A.S.
+
+space
+
+build
+
+dash
+
+P.
+
+space
+
+all
+```
+
+```
+Creating native modules
+```
+
+```
+The Expo Module A.P.I. enables developers to build modules for Expo and React Native projects using Swift, Kotlin, and TypeScript. We use it for most modules in the Expo SDK.
+```
+
+```
+Learn more about the Expo Module API design considerations.
+```
+
+```
+Another option is to use React Native's Core Native Modules API which may require some C++ knowledge in addition to Objective-C and Java.
+```
+
+```
+Most React Native modules in the ecosystem are built using this API because it is and always has been part of React Native, while the Expo Module API is new and intended to solve many of the pain points of using the core API.
 ```
