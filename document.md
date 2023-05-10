@@ -1,129 +1,245 @@
 ```
-Add custom native code
+Configuration with
+
+app
+
+dot
+
+J.S.O.N.
+
+slash
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
 ```
 
 ```
-Learn how to add custom native code to your Expo project.
+Learn about what is Expo and how you can dynamically use it by customizing it.
 ```
 
 ```
-The Expo Go app is a great tool to get started --
+The Expo config (
+
+app
+
+dot
+
+J.S.O.N.,
+
+app
+
+dot
+
+config
+
+J.S.,
+
+app
+
+dot
+
+config
+
+dot
+
+T.S.)
+
+is used for configuring how a project loads in Expo Go, Expo Prebuild generation, and the OTA update manifest.
 ```
 
 ```
-it exists to help developers quickly get projects off the ground, experiment with ideas (such as on Snack) and share their work with minimal friction.
+You can think of this as an
+
+indes
+
+dot
+
+H.T.M.L.
+
+but for React Native apps.
 ```
 
 ```
-Expo Go makes this possible by including a feature-rich native runtime made up of every module in the Expo SDK, so all you need to do to use a module is install the package and reload your app.
+It must be located at the root of your project, next to the
+
+package
+
+dot
+
+J.S.O.N.
 ```
 
 ```
-The tradeoff is that Expo Go does not allow you to add custom native code, you can only use native modules built into the Expo SDK.
+Here is a bare-minimum example:
 ```
 
 ```
-There are many great libraries available outside of the Expo SDK, and you may even want to build your own native library.
-```
+opening curly brace
 
-```
-You can leverage these libraries with development builds, or by using prebuild to generate the native projects, or both.
-```
+new line
 
-```
-You can also continue using EAS Build to release your app, no changes are required.
-```
+indent
 
-```
-Adding custom native code with development builds
-```
-
-```
-To make use of third-party libraries with custom native code and continue with the same developer experience of Expo Go, you can migrate to using development builds.
-```
-
-```
-Development builds are like your own personal version of Expo Go --
-```
-
-```
-they include the native runtime that powers your app, and you control what is included in that native runtime by adding or removing packages in your
-
-package dot json.
-```
-
-```
-Development builds allow you to continue to build your app in JavaScript while taking advantage of the full ecosystem of native packages available for Expo and React Native projects.
-```
-
-```
-Learn how to start using custom native code in your app by switching from Expo Go to development builds in the Getting Started guide for development builds.
-```
-
-```
-Generate native projects with prebuild
-```
-
-```
-If you would like to move from a JavaScript based project and take ownership over the iOS and Android native projects,
-```
-
-```
-you can generate them by running
-
-npx
-
-space
+double quote
 
 expo
 
-space
-
-prebuild,
-```
-
-```
-or
-
-npx
-
-space
-
-expo
-
-space
-
-run
+double quote
 
 colon
 
-opening bracket
+space
 
-ios
+opening curly brace
 
-vertical line
-
-android
-
-closing bracker
+new line
 ```
 
 ```
-(which will run
+indent
 
-prebuild
+indent
 
-automatically).
+double quote
+
+name
+
+double quote
+
+comma
+
+space
+
+double quote
+
+my app with capital m
+
+double quote
+
+comma
+
+new line
 ```
 
 ```
-You can also use development builds in this context --
+indent
+
+indent
+
+double quote
+
+slug
+
+double quote
+
+comma
+
+space
+
+double quote
+
+my dash app
+
+double quote
+
+new line
 ```
 
 ```
-the easiest way to do this is to run
+indent
 
-npx
+closing curly brace
+
+new line
+
+closing curly brace
+```
+
+```
+Most configuration from the Expo config is accessible at runtime from the JavaScript code using
+
+constanst with capital c
+
+dot
+
+expo config in camel case.
+```
+
+```
+Sensitive Information such as secret keys are removed.
+```
+
+```
+Properties
+```
+
+```
+The Expo config configures many things such as app name, icon, spash screen, deep linking scheme, API keys to use for some services and so on.
+```
+
+```
+For a complete list of available properties, see
+
+app
+
+dot
+
+J.S.O.N.
+
+slash
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+reference.
+```
+
+```
+Do you use Visual Studio Code? If so, we recommend that you install the
+
+V.S. code
+
+dash
+
+expo
+
+extension to get auto-completion of properties in
+
+app
+
+dot
+
+J.S.O.N.
+
+files.
+```
+
+```
+Extending configuration
+```
+
+```
+Library authors can extend the Expo config by using Expo Config plugins.
+```
+
+```
+Config plugins are mostly used to configure the
+
+N.P.X.
 
 space
 
@@ -131,31 +247,879 @@ expo
 
 space
 
-install
-
-space
-
-expo
-
-dash
-
-D.E.V.
-
-dash
-
-client
-```
-
-```
-before
-
 prebuild
+
+command
+```
+
+```
+Dynamic configuration
+```
+
+```
+For more customization, you can use the JavaScript or TypeScript (
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
 
 or
 
-run
+app
 
-and it's also possible to add the library at any later time.
+dot
+
+config
+
+dot
+
+T.S.).
+
+These configs have the following properties:
+```
+
+```
+- Comments, variables, and single quotes.
+```
+
+```
+- Importing/requiring other JavaScript files. Using import/export syntax in external files is not supported. All imported files must be transpiled to support your current version of
+
+node
+
+dot
+
+J.S.
+```
+
+```
+- TypeScript support with nullish coalescing and optional chaining.
+```
+
+```
+- Updated whenever Metro bundler reloads.
+```
+
+```
+- Provide environment information to your app.
+```
+
+```
+- Does not support Promises.
+```
+
+```
+For example, you can export an object to define your custom config:
+```
+
+```
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+Copy
+```
+
+```
+C.O.N.S.T.
+
+space
+
+my value in camel case
+
+space
+
+equals
+
+space
+
+single quote
+
+my app all word capital in first character
+
+single quote
+
+semicolon
+
+new line
+
+new line
+```
+
+```
+module
+
+dot
+
+exports
+
+space
+
+equals
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+name
+
+colon
+
+space
+
+my value in camel case
+
+comma
+
+new line
+```
+
+```
+indent
+
+version
+
+colon
+
+space
+
+process
+
+dot
+
+E.N.V.
+
+dot
+
+my underscore custom underscore project underscore version all capital
+
+space
+
+vertical line
+
+vertical line
+
+space
+
+single quote
+
+one point zero point zero
+
+single quote
+
+comma
+```
+
+```
+indent
+
+slash
+
+slash
+
+space
+
+All values in extra will be pressed to your app with first word capital in first character
+
+new line
+```
+
+```
+indent
+
+extra
+
+colon
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+fact
+
+colon
+
+space
+
+single quote
+
+kittens are cool
+
+single quote
+
+comma
+
+new line
+```
+
+```
+indent
+
+closing curly brace
+
+comma
+
+new line
+```
+
+```
+closing curly brace
+
+semicolon
+```
+
+```
+The
+
+double quote
+
+extra
+
+double quote
+
+key allows passing arbitrary configuration data to your app. The value of this key is accessed using
+
+expo
+
+dash
+
+constants:
+```
+
+```
+App dot J.S.
+
+Copy
+```
+
+```
+import
+
+space
+
+constants
+
+space
+
+from
+
+space
+
+single quote
+
+expo
+
+dash
+
+constants
+
+single quote
+
+semicolon
+
+new line
+
+new line
+```
+
+```
+Constants
+
+dot
+
+expo config in camel case
+
+dot
+
+extra
+
+dot
+
+fact
+
+space
+
+equals equals equals
+
+space
+
+single quote
+
+kittens are cool
+
+single quote
+
+semicolon
+```
+
+```
+You can access and modify incoming values by exporting a function that returns an object. This is useful if your project also has an
+
+app
+
+dot
+
+J.S.O.N..
+```
+
+```
+By default, Expo C.L.I. will read the
+
+app
+
+dot
+
+J.S.O.N.
+
+first and send the normalized results to the
+
+app
+
+dot
+
+config
+
+dot
+
+J.S..
+```
+
+```
+This functionality is disabled when the
+
+dash
+
+dash
+
+config
+
+is used to specify a custom config.
+```
+
+```
+The
+
+dash
+
+dash
+
+config
+
+flag is deprecated. For more information, see Migration from
+
+dash
+
+dash
+
+config
+
+in Expo C.L.I..
+```
+
+```
+For example, your
+
+app
+
+dot
+
+J.S.O.N.
+
+could look like this:
+```
+
+```
+app
+
+dot
+
+J.S.O.N.
+
+Copy
+```
+
+```
+opening curly brace
+
+new line
+
+indent
+
+double quote
+
+expo
+
+double quote
+
+colon
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+double quote
+
+name
+
+double quote
+
+colon
+
+space
+
+double quote
+
+my app every word capital in first character
+
+new line
+```
+
+```
+indent
+
+curly brace
+
+new line
+
+curly brace
+
+new line
+```
+
+```
+And in your
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.,
+
+you are provided with that configuration in the arguments to the exported function:
+```
+
+```
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+Copy
+```
+
+```
+module
+
+dot
+
+exports
+
+space
+
+equals
+
+space
+
+opening parenthesis
+
+opening curly brace
+
+space
+
+config
+
+space
+
+closing curly brace
+
+closing parenthesis
+
+space
+
+equals
+
+greater than
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+console
+
+dot
+
+log
+
+opening parenthesis
+
+config
+
+dot
+
+name
+
+closing parenthesis
+
+semicolon
+
+space
+
+slash
+
+slash
+
+space
+
+prints
+
+space
+
+single quote
+
+my app every word capital in first character
+
+single quote
+
+semicolon
+
+new line
+```
+
+```
+indent
+
+return
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+dot dot dot
+
+config
+
+comma
+
+new line
+```
+
+```
+indent
+
+closing curly brace
+
+semicolon
+```
+
+```
+closing curly brace
+
+semicolon
+```
+
+```
+Switching configuration based on the environment
+```
+
+```
+It's common to have some different configuration in development, staging, and production environments, or to swap out configuration entirely in order to white label an app.
+```
+
+```
+To accomplish this, you can use
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+along with environment variables.
+```
+
+```
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+Copy
+```
+
+```
+module
+
+dot
+
+exports
+
+space
+
+equals
+
+space
+
+opening parenthesis
+
+closing parenthesis
+
+space
+
+equals
+
+greater than
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+if
+
+space
+
+opening parenthesis
+
+process
+
+dot
+
+E.N.V.
+
+dot
+
+my underscore environment all capital
+
+space
+
+equals
+
+equals
+
+equals
+
+space
+
+single quote
+
+production
+
+single quote
+
+closing parenthesis
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+return
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+indent
+
+slash
+
+asterisk
+
+space
+
+your production config
+
+space
+
+asterisk
+
+slash
+
+new line
+```
+
+```
+indent
+
+indent
+
+closing curly brace
+
+semiclon
+
+new line
+```
+
+```
+indent
+
+closing curly brace
+
+space
+
+else
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+return
+
+space
+
+opening curly brace
+
+new line
+```
+
+```
+indent
+
+indent
+
+indent
+
+slash
+
+asterisk
+
+space
+
+your development config
+
+space
+
+asterisk
+
+slash
+
+new line
+```
+
+```
+indent
+
+indent
+
+closing curly brace
+
+semicolon
+
+new line
+```
+
+```
+indent
+
+closing curly brace
+
+new line
+
+closing curly brace
+
+semicolon
+```
+
+```
+To use this configuration with Expo C.L.I. commands, set the environment variable either for specific commands or in your shell profile.
+```
+
+```
+To set environment variables for specific commands, prefix the command with the variables and values as shown in the example:
 ```
 
 ```
@@ -163,336 +1127,29 @@ Terminal
 
 Copy
 
-hash space Build your native Android project
-
-new line
-```
-
-```
 dash
 
 space
 
-N.P.X.
+my underscore environment all capital
+
+equals
+
+production
 
 space
 
-expo
+E.A.S.
 
-space
-
-run
-
-colon
-
-android
-
-new line
-
-new line
+update
 ```
 
 ```
-hash space Build your native I.O.S. project
-new line
+This is not anything unique to Expo C.L.I..
 ```
 
 ```
-hash
-
-space
-
-N.P.X.
-
-expo
-
-run
-
-colon
-
-I.O.S.
-```
-
-```
-N.P.X.
-
-space
-
-expo
-
-space
-
-run
-
-colon
-
-android
-
-requires Android Studio SDK to be installed. See the setup environment guide.
-```
-
-```
-N.P.X.
-
-space
-
-expo
-
-space
-
-run
-
-colon
-
-I.O.S.
-
-requires XCode (macOS only) installed on your computer. See the setup environment guide.
-```
-
-```
-Using the run commands will initially prebuild your project to generate all of the native code within your project directory.
-```
-
-```
-If you manually modify the android or ios directory,
-```
-
-```
-you won't be able to safely re-run
-N.P.X.
-space
-expo
-space
-prebuild,
-this is known as the bare workflow.
-```
-
-```
-Your app can still run in Expo Go, however, any custom native code won't be accessible if it's not already present in the Expo Go app.
-```
-
-```
-If you install a package with an Expo
-
-config plugin,
-
-you'll need to add the plugin to the
-
-plugins
-
-array in the project's
-
-app dot json,
-```
-
-```
-then re-run
-
-N.P.X.
-
-space
-
-expo
-
-space
-
-prebuild
-
-to sync the changes before rebuilding the native app.
-```
-
-```
-Often this does things like adding required permissions to the
-
-android manifest dot X.M.L.
-
-or
-
-info dot P. list.
-```
-
-```
-You may need to run
-
-npx
-
-space
-
-expo
-
-space
-
-prebuild
-
-space
-
-dash
-
-dash
-
-clean
-
-depending on how complex the plugin is; this will delete and re-generate the native project files from scratch.
-```
-
-```
-Manually changing the native project files
-```
-
-```
-If you've made manual modifications to your
-
-android
-
-or
-
-ios
-
-directory,
-```
-
-```
-you'll need to manually setup new packages because running
-
-npx
-
-space
-
-expo
-
-space
-
-prebuild
-```
-
-```
-may not work as expected with an unpredictable project state (think of this like running
-
-yarn
-
-after manually modifying your
-
-node underscore modules
-
-directory).
-```
-
-```
-If you want to make static changes to your native project files like the iOS
-
-android manifest dot X.M.L.
-
-or
-
-info dot P. list
-
-and still have access to prebuilding, check out the config plugins guide to see how you can hook into the prebuild process to make those changes.
-```
-
-```
-Reverting changes from
-
-npx
-
-space
-
-expo
-
-space
-
-run
-
-colon
-
-opening bracket
-
-android
-
-vertical line
-
-ios
-
-closing bracket
-```
-
-```
-If you've decided that you want to roll your app back to being fully managed (no iOS and Android projects in your project directory),
-```
-
-```
-you can check out your most recent commit before executing
-```
-
-```
-npx
-
-space
-
-expo
-
-space
-
-run
-
-colon
-
-opening bracket
-
-android
-
-vertical line
-
-ios
-
-closing bracket,
-
-then run
-
-N.P.M.
-
-install
-
-again to restore the state of your
-
-node underscore modules
-
-directory.
-```
-
-```
-Developing apps with custom native code
-```
-
-```
-Once you have customized the native code in your project, you can use the
-
-expo
-
-dash
-
-D.E.V.
-
-dash
-
-client
-
-package to create a development build and retain the convenience of working with just JavaScript and/or TypeScript in Expo Go.
-```
-
-```
-You can create a development build for your managed or bare workflow.
-```
-
-```
-Releasing apps with custom native code to production
-```
-
-```
-When you're ready to ship your app, you can build it with EAS Build the same as you were building it before adding custom native code.
-```
-
-```
-Alternatively, you can archive and sign it locally. Unsurprisingly, we recommend EAS Build!
+On Windows you can approzimate the above command with:
 ```
 
 ```
@@ -502,53 +1159,27 @@ Copy
 ```
 
 ```
-hash
+dash
 
 space
 
-Install the C.L.I.
-
-new line
-```
-
-```
-hash
+N.P.X.
 
 space
 
-N.P.M.
-
-i
+cross
 
 dash
 
-G.
+E.N.V.
 
 space
 
-E.A.S.
+my underscore environment all capital
 
-dash
+equals
 
-C.L.I.
-
-new line
-
-new line
-```
-
-```
-hash
-
-space
-
-Build your app!
-
-new line
-```
-
-```
-hash
+production
 
 space
 
@@ -556,33 +1187,399 @@ E.A.S.
 
 space
 
-build
+update
+```
 
-dash
+```
+Or you can use any other mechanism that you are comfortable with for environment variables.
+```
 
-P.
+```
+Using TypeScript for configuration:
+
+app
+
+dot
+
+config
+
+dot
+
+T.S.
+
+instead of
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+```
+
+```
+You can use autocomplete and doc-blocks with an Expo config in TypeScript.
+```
+
+```
+Create an
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+with the following contents:
+```
+
+```
+app
+
+dot
+
+config
+
+dot
+
+T.S.
+
+Copy
+```
+
+```
+import
 
 space
 
-all
+opening curly brace
+
+space
+
+expo config in camel case with first character in capital
+
+comma
+
+space
+
+config context in camel case with first character in capital
+
+space
+
+closing curly brace
+
+space
+
+from
+
+space
+
+single quote
+
+expo
+
+slash
+
+config
+
+single quote
+
+semicolon
+
+new line
+
+new line
 ```
 
 ```
-Creating native modules
+export
+
+space
+
+default
+
+space
+
+opening parenthesis
+
+opening curly brace
+
+space
+
+config
+
+space
+
+closing curly brace
+
+colon
+
+space
+
+config context in camel case with first character in capital
+
+closing parenthesis
+
+comma
+
+space
+
+expo config in camel case with first character in capital
+
+space
+
+equals
+
+greater than
+
+space
+
+opening parenthesis
+
+opening curly brace
+
+new line
 ```
 
 ```
-The Expo Module A.P.I. enables developers to build modules for Expo and React Native projects using Swift, Kotlin, and TypeScript. We use it for most modules in the Expo SDK.
+indent
+
+dot dot dot
+
+config
+
+comma
+
+new line
 ```
 
 ```
-Learn more about the Expo Module API design considerations.
+indent
+
+slug
+
+comma
+
+space
+
+single quote
+
+my
+
+dash
+
+app
+
+single quote
+
+comma
+
+new line
 ```
 
 ```
-Another option is to use React Native's Core Native Modules API which may require some C++ knowledge in addition to Objective-C and Java.
+indent
+
+name
+
+comma
+
+space
+
+single quote
+
+my app every word capital in first character
+
+single quote
+
+comma
+
+new line
 ```
 
 ```
-Most React Native modules in the ecosystem are built using this API because it is and always has been part of React Native, while the Expo Module API is new and intended to solve many of the pain points of using the core API.
+closing curly brace
+
+closing parenthesis
+
+semicolon
+```
+
+```
+If you want to import other TypeScript files or customize the language features, we recommend using
+
+T.S.
+
+dash
+
+node
+
+as described in Using TypeScript.
+```
+
+```
+Configuration Resolution Rules
+```
+
+```
+There are two different types of configs: static (
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.O.N.,
+
+app
+
+dot
+
+J.S.O.N.),
+
+and dynamic (
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.,
+
+app
+
+dot
+
+config
+
+dot
+
+T.S.).
+```
+
+```
+Static configs can be automatically updated with C.L.I. tools, whereas dynamic configs must be manually updated by the developer.
+```
+
+```
+1. The static config is read if
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.O.N.
+
+exists (falls back to
+
+app
+
+dot
+
+J.S.O.N.
+
+).
+```
+
+```
+If no static config exists, then default values are inferred from the
+
+package
+
+dot
+
+J.S.O.N.
+
+and your depedencies.
+```
+
+```
+2. The dynamic config is read if either
+
+app
+
+dot
+
+config
+
+dot
+
+J.S.
+
+exists. If both exist, then TypeScript config is used.
+```
+
+```
+3. If the dynamic config returns a function, then the static config is passed to the function with
+
+opening parenthesis
+
+opening curly brace
+
+space
+
+config
+
+space
+
+closing curly brace
+
+closing parenthesis
+
+space
+
+equals
+
+greater than
+
+space
+
+opening parenthesis
+
+opening curly brace
+
+closing curly brace
+
+closing parenthesis.
+```
+
+```
+This function can then mutate the static config values.
+```
+
+```
+Think of this like middleware for the final config
+```
+
+```
+4. The return value from the dynamic config is used as the final config.
+```
+
+```
+It cannot have any promises.
+```
+
+```
+5. All functions in the config are evaluated are seialized before any tool in the Expo ecosystem uses it.
+```
+
+```
+The config must be a J.S.O.N. manifest when it is hosted
 ```
