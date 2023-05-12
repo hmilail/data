@@ -1,1585 +1,274 @@
+0
 ```
-Configuration with
-
-app
-
-dot
-
-J.S.O.N.
-
-slash
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-```
-
-```
-Learn about what is Expo and how you can dynamically use it by customizing it.
+Introduction to DevOps
 ```
 
+1
 ```
-The Expo config (
-
-app
-
-dot
-
-J.S.O.N.,
-
-app
-
-dot
-
-config
-
-J.S.,
-
-app
-
-dot
-
-config
-
-dot
-
-T.S.)
-
-is used for configuring how a project loads in Expo Go, Expo Prebuild generation, and the OTA update manifest.
+Devops is basically combination of two words-
 ```
 
+2
 ```
-You can think of this as an
-
-indes
-
-dot
-
-H.T.M.L.
-
-but for React Native apps.
+Development and Operations.
 ```
 
+3
 ```
-It must be located at the root of your project, next to the
-
-package
-
-dot
-
-J.S.O.N.
+DevOps is a culture that implements the technology in order to promote colloboration between the developer team and the operations team to deploy code to production faster in an automated and repeatable way.
 ```
 
+4
 ```
-Here is a bare-minimum example:
+Why DevOps?
 ```
 
+5
 ```
-opening curly brace
-
-new line
-
-indent
-
-double quote
-
-expo
-
-double quote
-
-colon
-
-space
-
-opening curly brace
-
-new line
+The goal of DevOps is to increase an organization's speed when it comes to delivering applications and services.
 ```
 
+6
 ```
-indent
-
-indent
-
-double quote
-
-name
-
-double quote
-
-comma
-
-space
-
-double quote
-
-my app with capital m
-
-double quote
-
-comma
-
-new line
+Many companies have successfully implemented DevOps to enhance their user experience including Amazon, Netflix, etc.
 ```
 
+7
 ```
-indent
-
-indent
-
-double quote
-
-slug
-
-double quote
-
-comma
-
-space
-
-double quote
-
-my dash app
-
-double quote
-
-new line
+Facebook's mobile app which is updated every two weeks effectively tells users you can have what you want and you can have it.
 ```
 
+8
 ```
-indent
-
-closing curly brace
-
-new line
-
-closing curly brace
+Now ever wondered how Facebook was able to do social smoothing?
 ```
 
+9
 ```
-Most configuration from the Expo config is accessible at runtime from the JavaScript code using
-
-constanst with capital c
-
-dot
-
-expo config in camel case.
+It's the DevOps philosophy that helps Facebook ensures that apps aren't outdated and that users get the best experience on Facebook.
 ```
 
+10
 ```
-Sensitive Information such as secret keys are removed.
+Facebook accomplishes this true code ownership model that makes its developers responsible that includes testing and supporting through production and delivery for each kernel of code.
 ```
 
+11
 ```
-Properties
+They write and update their true policies like this but Facebook has developed a DevOps culture and has successfully accelerated its development lifecycle.
 ```
 
+12
 ```
-The Expo config configures many things such as app name, icon, spash screen, deep linking scheme, API keys to use for some services and so on.
+Industries have started to gear up for digital transformation by shifting their means to weeks and months instead of years while maintaining high quality as a result.
 ```
 
+13
 ```
-For a complete list of available properties, see
-
-app
-
-dot
-
-J.S.O.N.
-
-slash
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-reference.
+The solution to all this is- DevOps.
 ```
 
+14
 ```
-Do you use Visual Studio Code? If so, we recommend that you install the
-
-V.S. code
-
-dash
-
-expo
-
-extension to get auto-completion of properties in
-
-app
-
-dot
-
-J.S.O.N.
-
-files.
+How DevOps is different from Traditional IT?
 ```
 
+15
 ```
-Extending configuration
+Traditional IT has 1000s lines of code and is created by different teams with different standards whereas DevOps is created by one team with intimate knowledge of the product.
 ```
 
+16
 ```
-Library authors can extend the Expo config by using Expo Config plugins.
+Traditional IT is comples to understand and DevOps is easily unstandable.
 ```
 
+17
 ```
-Config plugins are mostly used to configure the
-
-N.P.X.
-
-space
-
-expo
-
-space
-
-prebuild
-
-command
+DevOps Lifecycle
 ```
 
+18
 ```
-Dynamic configuration
+DevOps lifecycle is the methodology where professional development teams come together to bring products to market more efficiently and quickly.
 ```
 
+19
 ```
-For more customization, you can use the JavaScript or TypeScript (
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-or
-
-app
-
-dot
-
-config
-
-dot
-
-T.S.).
-
-These configs have the following properties:
+The structure of the DevOps lifecycle consists of Plan, Code, Building, Test, Releasing, Deploying, Operating, and Monitoring.
 ```
 
+20
 ```
-- Comments, variables, and single quotes.
+- Plan: Determining the commercial needs and gathering the opinions of end-user by professionals in this level of the DevOps lifecycle.
 ```
 
+21
 ```
-- Importing/requiring other JavaScript files. Using import/export syntax in external files is not supported. All imported files must be transpiled to support your current version of
-
-node
-
-dot
-
-J.S.
+- Code: At this level, the code for the same is developed and in order to simplify the design, the team of developers uses tools and extensions that take care of security problems.
 ```
 
+22
 ```
-- TypeScript support with nullish coalescing and optional chaining.
+- Build: After the coding part, programmers use various tools for the submission of the coding to the common code source.
 ```
 
+23
 ```
-- Updated whenever Metro bundler reloads.
+- Test: This level is very important to assure software integrity. Various sorts of tests are done such as user acceptability testing, safety testing, speed testing, and many more.
 ```
 
+24
 ```
-- Provide environment information to your app.
+- Release: At this level, everything is ready to be deployed in the operational environment.
 ```
 
+25
 ```
-- Does not support Promises.
+- Deploy: In this level, Infrastructure-as-Code assists in creating the operational infrastructure and subsequently publishes the build using various DevOps lifecycle tools.
 ```
 
+26
 ```
-For example, you can export an object to define your custom config:
+- Operate: At this level, the available version is ready for users to use.
 ```
 
+27
 ```
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-Copy
+Here, the department looks after the server configuration and deployment.
 ```
 
+28
 ```
-C.O.N.S.T.
-
-space
-
-my value in camel case
-
-space
-
-equals
-
-space
-
-single quote
-
-my app all word capital in first character
-
-single quote
-
-semicolon
-
-new line
-
-new line
+- Monitor: The observation is done at this level that depends on the data which is gathered from consumer behavior, the efficiency of applications, and from various other sources.
 ```
 
+29
 ```
-module
-
-dot
-
-exports
-
-space
-
-equals
-
-space
-
-opening curly brace
-
-new line
+Best Practices to follow:
 ```
 
+30
 ```
-indent
-
-name
-
-colon
-
-space
-
-my value in camel case
-
-comma
-
-new line
+- Implement automated dashboard
 ```
 
+31
 ```
-indent
-
-version
-
-colon
-
-space
-
-process
-
-dot
-
-E.N.V.
-
-dot
-
-my underscore custom underscore project underscore version all capital
-
-space
-
-vertical line
-
-vertical line
-
-space
-
-single quote
-
-one point zero point zero
-
-single quote
-
-comma
+- Keep the entire team together
 ```
 
+32
 ```
-indent
-
-slash
-
-slash
-
-space
-
-All values in extra will be pressed to your app with first word capital in first character
-
-new line
+- Allow DevOps to be a cultural change
 ```
 
+33
 ```
-indent
-
-extra
-
-colon
-
-space
-
-opening curly brace
-
-new line
+- Be patient with the developers
 ```
 
+34
 ```
-indent
-
-indent
-
-fact
-
-colon
-
-space
-
-single quote
-
-kittens are cool
-
-single quote
-
-comma
-
-new line
+- Maintain a centralized unit
 ```
 
+35
 ```
-indent
-
-closing curly brace
-
-comma
-
-new line
+- Build a flexible infrastructure
 ```
 
+36
 ```
-closing curly brace
-
-semicolon
+Advantages:
 ```
 
+37
 ```
-The
-
-double quote
-
-extra
-
-double quote
-
-key allows passing arbitrary configuration data to your app. The value of this key is accessed using
-
-expo
-
-dash
-
-constants:
+1. Faster Delivery: DevOps enables organizations to release new products and updates faster and more frequently, which can lead to a competitve advantage.
 ```
 
+38
 ```
-App dot J.S.
-
-Copy
+2. Improved Collaboration: DevOps promotes collaboration between development and operations teams, resulting in better communication, increased efficiency, and reduced friction.
 ```
 
+39
 ```
-import
-
-space
-
-constants
-
-space
-
-from
-
-space
-
-single quote
-
-expo
-
-dash
-
-constants
-
-single quote
-
-semicolon
-
-new line
-
-new line
+3. Improved Quality: DevOps emphasizes automated testing and continuous integration, which helps to catch bugs early in the development process and improve the overall quality of software.
 ```
 
+40
 ```
-Constants
-
-dot
-
-expo config in camel case
-
-dot
-
-extra
-
-dot
-
-fact
-
-space
-
-equals equals equals
-
-space
-
-single quote
-
-kittens are cool
-
-single quote
-
-semicolon
+4. Increased Automation: DevOps enables organizations to automate many manual processes, freeing up time for more strategic work and reducing the rick of human error.
 ```
 
+41
 ```
-You can access and modify incoming values by exporting a function that returns an object. This is useful if your project also has an
-
-app
-
-dot
-
-J.S.O.N..
+5. Better Scalability: DevOps enables organizations to quickly and efficiently scale their infrastructure to meet changing demands, improving the ability to respond to business needs.
 ```
 
+42
 ```
-By default, Expo C.L.I. will read the
-
-app
-
-dot
-
-J.S.O.N.
-
-first and send the normalized results to the
-
-app
-
-dot
-
-config
-
-dot
-
-J.S..
+6. Increased Customer Satisfaction: DevOps helps orgaanizations to deliver new features and updates more quickly, which can result in increased customer satisfaction and loyalty.
 ```
 
+43
 ```
-This functionality is disabled when the
-
-dash
-
-dash
-
-config
-
-is used to specify a custom config.
+7. Improved Security: DevOps promotes security best practices, such as continuous resting and monitoring, which can help to produce the risk of security breaches and improve the overall security of an organizations's systems.
 ```
 
+44
 ```
-The
-
-dash
-
-dash
-
-config
-
-flag is deprecated. For more information, see Migration from
-
-dash
-
-dash
-
-config
-
-in Expo C.L.I..
+8. Better Resources Utilization: DevOps enables organizations to optimize their use of resources, including hardware, software, and personnel, which can result in cost savings and improved efficiency.
 ```
 
+45
 ```
-For example, your
-
-app
-
-dot
-
-J.S.O.N.
-
-could look like this:
+Disadvantages:
 ```
 
+46
 ```
-app
-
-dot
-
-J.S.O.N.
-
-Copy
+1. High Initial Investment: Implementing DevOps can be a comples and costly process, requiring significant investment in technology, infrastructure, and personnel.
 ```
 
+47
 ```
-opening curly brace
-
-new line
-
-indent
-
-double quote
-
-expo
-
-double quote
-
-colon
-
-space
-
-opening curly brace
-
-new line
+2. Skills Shortage: Finding qualified DevOps professionals can be a challenge, and organizations may need to invest in training and development programs to build the necessary skills within their teams.
 ```
 
+48
 ```
-indent
-
-indent
-
-double quote
-
-name
-
-double quote
-
-colon
-
-space
-
-double quote
-
-my app every word capital in first character
-
-new line
-```
-
-```
-indent
-
-curly brace
-
-new line
-
-curly brace
-
-new line
-```
-
-```
-And in your
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.,
-
-you are provided with that configuration in the arguments to the exported function:
-```
-
-```
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-Copy
-```
-
-```
-module
-
-dot
-
-exports
-
-space
-
-equals
-
-space
-
-opening parenthesis
-
-opening curly brace
-
-space
-
-config
-
-space
-
-closing curly brace
-
-closing parenthesis
-
-space
-
-equals
-
-greater than
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-console
-
-dot
-
-log
-
-opening parenthesis
-
-config
-
-dot
-
-name
-
-closing parenthesis
-
-semicolon
-
-space
-
-slash
-
-slash
-
-space
-
-prints
-
-space
-
-single quote
-
-my app every word capital in first character
-
-single quote
-
-semicolon
-
-new line
-```
-
-```
-indent
-
-return
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-indent
-
-dot dot dot
-
-config
-
-comma
-
-new line
-```
-
-```
-indent
-
-closing curly brace
-
-semicolon
-```
-
-```
-closing curly brace
-
-semicolon
-```
-
-```
-Switching configuration based on the environment
-```
-
-```
-It's common to have some different configuration in development, staging, and production environments, or to swap out configuration entirely in order to white label an app.
-```
-
-```
-To accomplish this, you can use
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-along with environment variables.
-```
-
-```
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-Copy
-```
-
-```
-module
-
-dot
-
-exports
-
-space
-
-equals
-
-space
-
-opening parenthesis
-
-closing parenthesis
-
-space
-
-equals
-
-greater than
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-if
-
-space
-
-opening parenthesis
-
-process
-
-dot
-
-E.N.V.
-
-dot
-
-my underscore environment all capital
-
-space
-
-equals
-
-equals
-
-equals
-
-space
-
-single quote
-
-production
-
-single quote
-
-closing parenthesis
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-indent
-
-return
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-indent
-
-indent
-
-slash
-
-asterisk
-
-space
-
-your production config
-
-space
-
-asterisk
-
-slash
-
-new line
-```
-
-```
-indent
-
-indent
-
-closing curly brace
-
-semiclon
-
-new line
-```
-
-```
-indent
-
-closing curly brace
-
-space
-
-else
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-indent
-
-return
-
-space
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-indent
-
-indent
-
-slash
-
-asterisk
-
-space
-
-your development config
-
-space
-
-asterisk
-
-slash
-
-new line
-```
-
-```
-indent
-
-indent
-
-closing curly brace
-
-semicolon
-
-new line
-```
-
-```
-indent
-
-closing curly brace
-
-new line
-
-closing curly brace
-
-semicolon
-```
-
-```
-To use this configuration with Expo C.L.I. commands, set the environment variable either for specific commands or in your shell profile.
-```
-
-```
-To set environment variables for specific commands, prefix the command with the variables and values as shown in the example:
-```
-
-```
-Terminal
-
-Copy
-
-dash
-
-space
-
-my underscore environment all capital
-
-equals
-
-production
-
-space
-
-E.A.S.
-
-update
-```
-
-```
-This is not anything unique to Expo C.L.I..
-```
-
-```
-On Windows you can approzimate the above command with:
-```
-
-```
-Terminal
-
-Copy
-```
-
-```
-dash
-
-space
-
-N.P.X.
-
-space
-
-cross
-
-dash
-
-E.N.V.
-
-space
-
-my underscore environment all capital
-
-equals
-
-production
-
-space
-
-E.A.S.
-
-space
-
-update
-```
-
-```
-Or you can use any other mechanism that you are comfortable with for environment variables.
-```
-
-```
-Using TypeScript for configuration:
-
-app
-
-dot
-
-config
-
-dot
-
-T.S.
-
-instead of
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-```
-
-```
-You can use autocomplete and doc-blocks with an Expo config in TypeScript.
-```
-
-```
-Create an
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-with the following contents:
-```
-
-```
-app
-
-dot
-
-config
-
-dot
-
-T.S.
-
-Copy
-```
-
-```
-import
-
-space
-
-opening curly brace
-
-space
-
-expo config in camel case with first character in capital
-
-comma
-
-space
-
-config context in camel case with first character in capital
-
-space
-
-closing curly brace
-
-space
-
-from
-
-space
-
-single quote
-
-expo
-
-slash
-
-config
-
-single quote
-
-semicolon
-
-new line
-
-new line
-```
-
-```
-export
-
-space
-
-default
-
-space
-
-opening parenthesis
-
-opening curly brace
-
-space
-
-config
-
-space
-
-closing curly brace
-
-colon
-
-space
-
-config context in camel case with first character in capital
-
-closing parenthesis
-
-comma
-
-space
-
-expo config in camel case with first character in capital
-
-space
-
-equals
-
-greater than
-
-space
-
-opening parenthesis
-
-opening curly brace
-
-new line
-```
-
-```
-indent
-
-dot dot dot
-
-config
-
-comma
-
-new line
-```
-
-```
-indent
-
-slug
-
-comma
-
-space
-
-single quote
-
-my
-
-dash
-
-app
-
-single quote
-
-comma
-
-new line
-```
-
-```
-indent
-
-name
-
-comma
-
-space
-
-single quote
-
-my app every word capital in first character
-
-single quote
-
-comma
-
-new line
-```
-
-```
-closing curly brace
-
-closing parenthesis
-
-semicolon
-```
-
-```
-If you want to import other TypeScript files or customize the language features, we recommend using
-
-T.S.
-
-dash
-
-node
-
-as described in Using TypeScript.
-```
-
-```
-Configuration Resolution Rules
-```
-
-```
-There are two different types of configs: static (
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.O.N.,
-
-app
-
-dot
-
-J.S.O.N.),
-
-and dynamic (
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.,
-
-app
-
-dot
-
-config
-
-dot
-
-T.S.).
-```
-
-```
-Static configs can be automatically updated with C.L.I. tools, whereas dynamic configs must be manually updated by the developer.
-```
-
-```
-1. The static config is read if
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.O.N.
-
-exists (falls back to
-
-app
-
-dot
-
-J.S.O.N.
-
-).
-```
-
-```
-If no static config exists, then default values are inferred from the
-
-package
-
-dot
-
-J.S.O.N.
-
-and your depedencies.
-```
-
-```
-2. The dynamic config is read if either
-
-app
-
-dot
-
-config
-
-dot
-
-J.S.
-
-exists. If both exist, then TypeScript config is used.
-```
-
-```
-3. If the dynamic config returns a function, then the static config is passed to the function with
-
-opening parenthesis
-
-opening curly brace
-
-space
-
-config
-
-space
-
-closing curly brace
-
-closing parenthesis
-
-space
-
-equals
-
-greater than
-
-space
-
-opening parenthesis
-
-opening curly brace
-
-closing curly brace
-
-closing parenthesis.
+3. Resistance to Change: Some employees may resist the cultural and organizational changes required for successful DevOps adoption, which can result in resistance, resistance to collaboration, and reduced efficiency.
 ```
 
+49
 ```
-This function can then mutate the static config values.
+4. Lack of Standardization: DevOps is still a relatively new field, and there is a lack of standardization in terms of methodologies, tools, and processes.
 ```
 
+50
 ```
-Think of this like middleware for the final config
+This can make it difficult for organizations to determine the best approach for their specific needs.
 ```
 
+51
 ```
-4. The return value from the dynamic config is used as the final config.
+5. Increased Complexity: DevOps can increase the complexity of software delivery, requiring organizations to manage a larger number of moving parts and integrate multiple systems and tools.
 ```
 
+52
 ```
-It cannot have any promises.
+6. Depedency on Technology: DevOps relies heavily on technology, and organizations may need to invest in a variety of tools and platforms to support the DevOps process.
 ```
 
+53
 ```
-5. All functions in the config are evaluated are seialized before any tool in the Expo ecosystem uses it.
+7. Need for Continuous Improvement: DevOps requires ongoing improvement and adaptation, as new technologies and best practices emerge.
 ```
 
+54
 ```
-The config must be a J.S.O.N. manifest when it is hosted
+Organizations must be prepared to continuously adapt and evolve their DevOps to remain competitive.
 ```
